@@ -374,3 +374,12 @@ const bills = [
 ];
 
 // Start coding here
+
+let totalBillAmount = bills.reduce((total, bill) => total + bill.total, 0);
+
+console.log("Total bill Transaction ", totalBillAmount);
+
+let totalBillAmountByCash = bills.reduce((total, bill) => {
+  return bill.paymentType === "Cash" ? total + bill.total : total;
+}, 0);
+console.log("Total bill Transaction by Cash ", totalBillAmountByCash);
