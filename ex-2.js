@@ -375,4 +375,11 @@ const bills = [
 
 // Start coding here
 
-const newBills;
+const newBills = 0;
+function totalAmountBills(bills) {
+  const newBills = bills
+    .filter((bill) => bill.member !== null)
+    .reduce((total, bill) => total + bill.total, 0);
+  return newBills;
+}
+console.log(totalAmountBills(bills));
