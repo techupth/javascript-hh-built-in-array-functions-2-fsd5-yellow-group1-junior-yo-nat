@@ -374,4 +374,13 @@ const bills = [
 ];
 
 // Start coding here
-const totalMembers;
+
+// ข้อนี้ใช้ Chat GPT ช่วยครับ
+const uniqueMembers = new Set(
+  bills
+    .map((bill) => bill.member && bill.member.name)
+    .filter((member) => member !== null)
+);
+const totalMembers = Array.from(uniqueMembers).length;
+
+console.log(`Unique Members Count: ${totalMembers}`);
