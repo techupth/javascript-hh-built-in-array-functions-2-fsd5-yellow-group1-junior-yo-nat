@@ -374,4 +374,8 @@ const bills = [
 ];
 
 // Start coding here
-const billMembers;
+const billMembers = bills
+  .map((bill) => (bill.member ? bill.member.name : null)) // ทำการคัดกรองชื่อ (หากไม่มีให้เป็น null)
+  .filter((member) => member !== null); // กรองเอาเฉพาะสมาชิกที่ไม่ใช่ null
+
+console.log(billMembers);
